@@ -1,0 +1,52 @@
+.artist
+{
+    font-size: 25px;
+    box-sizing: border-box;
+    padding: 1% 2%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    width: 25%;
+}
+
+.artist a
+{
+    text-decoration: none;
+}
+
+.artist a:hover
+{
+    color: var(--main-link-hover-color);
+}
+
+.artistImg
+{
+    width: 80px;
+    height: 80px;
+
+    border-radius: 7px;
+    margin-right: 5%;
+}
+
+@media only screen and (max-width: 1600px) {
+    .artist {
+        width: 33.33%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .artist {
+        width: 50%;
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .artist {
+        width: 100%;
+        font-size: 18px;
+    }
+}
+

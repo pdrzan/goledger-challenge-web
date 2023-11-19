@@ -1,0 +1,40 @@
+.artists
+{
+    background-color: var(--main-secondary-color);
+
+    box-sizing: border-box;
+    height: 520px;
+    width: 83.33%;
+    max-width: 1600px;
+
+    border-radius: 20px;
+    padding: 30px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+@media only screen and (max-width: 1600px) {
+    .artists {
+        padding: 25px;
+        border-radius: 17px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .artists {
+        padding: 20px;
+        border-radius: 14px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .artists {
+        padding: 16px;
+        border-radius: 12px;
+    }
+}
