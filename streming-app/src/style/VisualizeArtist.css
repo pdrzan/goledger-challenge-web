@@ -1,0 +1,72 @@
+.visualizeArtist
+{
+    background-color: var(--main-secondary-color);
+
+    padding: 30px;
+    border-radius: 20px;
+
+    box-sizing: border-box;
+    width: 83.33%;
+    max-width: 1600px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.visualizeArtist img
+{
+    width: 28.75%;
+    height: 100%;
+    border-radius: 7px;
+}
+
+.descriptionArtist
+{
+    width: 68.74%;
+    background-color: var(--main-tertiary-color);
+    border-radius: 7px;
+    height: 100%;
+}
+
+.descriptionArtist .subHeader
+{
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 1600px) {
+    .paragraph {
+        font-size: 20px;
+        
+    }
+    .titleParagraph
+    {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .visualizeArtist img{
+        width: 100%;
+        height: auto;
+    }
+    .descriptionArtist
+    {
+        width: 100%;
+        height: auto;
+
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .paragraph {
+        padding: 8px 37px;;
+        font-size: 12px;
+    }
+    .titleParagraph
+    {
+        font-size: 17px;
+        margin-bottom: 7px;
+    }
+}

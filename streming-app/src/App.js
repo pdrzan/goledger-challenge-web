@@ -6,14 +6,15 @@ import {
 } from "react-router-dom";
 import Artists from './components/Artists';
 import CreateArtist from './components/CreateArtist'
+import VisualizeArtist from './components/VisualizeArtist';
 
 function App() {
-  console.log("APP")
   return (
     <Router>
       <Routes>
-        <Route path="/Artist" element={Artists()} />
+        <Route path="/Artists" element={Artists()} />
         <Route path="/CreateArtist" element={CreateArtist()} />
+        <Route path="/VisualizeArtist" element={VisualizeArtist()} />
       </Routes>
     </Router>
   );
