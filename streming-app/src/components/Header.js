@@ -11,7 +11,7 @@ function Header(linkActive)
             <div className="links">
                 <a href="#" className={linkActive === 'songs' ? 'active' : ''}>Songs</a>
                 <a href="#" className={linkActive === 'albums' ? 'active' : ''}>Albums</a>
-                <a href="#" className={linkActive === 'artists' ? 'active' : ''}>Artists</a>
+                <a href="/Artists" className={linkActive === 'artists' ? 'active' : ''}>Artists</a>
                 <a href="#" className={linkActive === 'playlist' ? 'active' : ''}>Playlist</a>
             </div>
         </header>
