@@ -1,5 +1,4 @@
-.paragraph
-{
+.paragraph {
     padding: 12px 55px;
 
     display: flex;
@@ -8,10 +7,10 @@
     font-size: 22px;
 }
 
-.titleParagraph
-{
+.titleParagraph {
     font-size: 25px;
     font-weight: bold;
+    width: 100%;
 
     margin-bottom: 10px;
 }
@@ -21,8 +20,8 @@
     .paragraph {
         font-size: 20px;
     }
-    .titleParagraph
-    {
+
+    .titleParagraph {
         font-size: 23px;
     }
 }
@@ -32,8 +31,8 @@
         padding: 10px 45px;
         font-size: 16px;
     }
-    .titleParagraph
-    {
+
+    .titleParagraph {
         font-size: 20px;
         margin-bottom: 9px;
     }
@@ -41,11 +40,12 @@
 
 @media only screen and (max-width: 800px) {
     .paragraph {
-        padding: 8px 37px;;
+        padding: 8px 37px;
+        ;
         font-size: 12px;
     }
-    .titleParagraph
-    {
+
+    .titleParagraph {
         font-size: 17px;
         margin-bottom: 7px;
     }
