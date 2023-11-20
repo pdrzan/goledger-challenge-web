@@ -17,6 +17,16 @@ function Buttons(page) {
                     {Button('Create artist', 'createArtistForm', 'submit')}
                 </div>
             )
+        case 'VisualizeArtist':
+            return (
+                <div className="buttons">
+                    <a href='/CreateArtist'>
+                        {Button('New artist', 'newArtistButton')}
+                    </a>
+                    {Button('Delete artist', 'deleteArtistButton')}
+                    {Button('Update artist', 'updateArtistButton')}
+                </div>
+            )
         default:
             return <></>
     }
