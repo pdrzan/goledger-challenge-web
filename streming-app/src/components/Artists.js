@@ -17,7 +17,7 @@ function Artists() {
     return (
         done ?
             <>
-                {Header('albums')}
+                {Header('artists')}
                 <div className='main'>
                     {Buttons('Artists')}
                     <div className='artists'>
