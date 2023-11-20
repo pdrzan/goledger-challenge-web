@@ -1,0 +1,52 @@
+.paragraph
+{
+    padding: 12px 55px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    font-size: 22px;
+}
+
+.titleParagraph
+{
+    font-size: 25px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 1600px) {
+    .paragraph {
+        font-size: 20px;
+    }
+    .titleParagraph
+    {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .paragraph {
+        padding: 10px 45px;
+        font-size: 16px;
+    }
+    .titleParagraph
+    {
+        font-size: 20px;
+        margin-bottom: 9px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .paragraph {
+        padding: 8px 37px;;
+        font-size: 12px;
+    }
+    .titleParagraph
+    {
+        font-size: 17px;
+        margin-bottom: 7px;
+    }
+}
