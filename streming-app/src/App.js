@@ -7,6 +7,7 @@ import {
 import Artists from './components/Artists';
 import CreateArtist from './components/CreateArtist'
 import VisualizeArtist from './components/VisualizeArtist';
+import UpdateArtist from './components/UpdateArtist';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Artists" element={Artists()} />
         <Route path="/CreateArtist" element={CreateArtist()} />
         <Route path="/VisualizeArtist" element={VisualizeArtist()} />
+        <Route path="/UpdateArtist" element={UpdateArtist()} />
       </Routes>
     </Router>
   );

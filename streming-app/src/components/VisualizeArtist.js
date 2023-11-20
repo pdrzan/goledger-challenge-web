@@ -21,14 +21,20 @@ function VisualizeArtist() {
     }
     if (done) {
         const deleteArtistButton = document.querySelector("button[form='deleteArtistButton']");
-        console.log(deleteArtistButton);
         if (deleteArtistButton && !deleteArtistButton.classList.contains('hasEventListener')) {
             deleteArtistButton.classList.add('hasEventListener');
-            console.log("adicionado");
             deleteArtistButton.addEventListener('click', async function (e) {
                 e.preventDefault();
                 deleteAsset(key);
                 document.location.href = '/Artists';
+            });
+        }
+        const updateArtistButton = document.querySelector("button[form='updateArtistVisualize']");
+        if (updateArtistButton && !updateArtistButton.classList.contains('hasEventListener')) {
+            updateArtistButton.classList.add('hasEventListener');
+            updateArtistButton.addEventListener('click', async function (e) {
+                e.preventDefault();
+                document.location.pathname = '/UpdateArtist';
             });
         }
     }
@@ -42,7 +48,7 @@ function VisualizeArtist() {
                         <img src={ArtistImage} alt="Michael Jackson"></img>
                         <div className='descriptionArtist'>
                             {SubHeader(name)}
-                            {Paragraph(name, about)}
+                            {Paragraph("About", about)}
                         </div>
                     </div>
                 </div>

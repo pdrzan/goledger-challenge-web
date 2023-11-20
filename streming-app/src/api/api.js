@@ -220,6 +220,31 @@ function useUpdateAsset(asset) {
   );
 }
 
+function updateAsset(asset) {
+  let data;
+
+  fetch('http://ec2-54-87-223-191.compute-1.amazonaws.com/api/invoke/updateAsset', {
+    method: "PUT",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(
+      {
+        "update": asset
+      }
+    )
+  })
+    .then(response => response.json())
+    .then(json => data = json)
+    .catch(error => console.error(error));
+
+  return (
+    data ? data : false
+  );
+}
+
+
 function deleteAsset(key) {
   let data;
 
@@ -248,4 +273,4 @@ function deleteAsset(key) {
 
 
 
-export { useGetHeader, useGetShema, useGetShemaPost, useCreateAsset, useReadAsset, useSearch, useUpdateAsset, deleteAsset, createAsset, useSearchKey };
+export { useGetHeader, useGetShema, useGetShemaPost, useCreateAsset, useReadAsset, useSearch, useUpdateAsset, deleteAsset, createAsset, useSearchKey, updateAsset };

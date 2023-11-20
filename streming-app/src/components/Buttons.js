@@ -24,7 +24,13 @@ function Buttons(page) {
                         {Button('New artist', 'newArtistButton')}
                     </a>
                     {Button('Delete artist', 'deleteArtistButton')}
-                    {Button('Update artist', 'updateArtistButton')}
+                    {Button('Update artist', 'updateArtistVisualize')}
+                </div>
+            )
+        case 'updateArtist':
+            return (
+                <div className="buttons">
+                    {Button('Update artist', 'updateArtistForm', 'submit')}
                 </div>
             )
         default:
