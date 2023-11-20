@@ -1,9 +1,9 @@
 import '../style/Button.css'
 
-function Button(textButton)
+function Button(textButton, form, type='')
 {
     return(
-        <button className='button'>{textButton}</button>
+        <button className='button' form={form} type={type}>{textButton}</button>
     )
 }
 

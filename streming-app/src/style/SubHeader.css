@@ -1,0 +1,33 @@
+.subHeader
+{
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-bottom: 2px solid var(--main-secondary-color);
+    width: 100%;
+
+    display: flex;
+    padding: 12px 55px;
+
+    font-weight: 700;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 1600px) {
+    .subHeader {
+        font-size: 27px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .subHeader {
+        padding: 10px 45px;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .subHeader {
+        padding: 8px 37px;;
+        font-size: 22px;
+    }
+}

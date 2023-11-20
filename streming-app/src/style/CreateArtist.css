@@ -1,0 +1,53 @@
+.createArtist {
+    background-color: var(--main-tertiary-color);
+
+    box-sizing: border-box;
+    width: 83.33%;
+    max-width: 1600px;
+
+    border-radius: 20px;
+    padding: 30px 75px 60px 75px;
+
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.createArtist input {
+    border: none;
+    width: 100%;
+}
+
+.createArtistForm {
+    padding: 0px 55px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1600px) {
+    .createArtist {
+        border-radius: 18px;
+        padding: 27px 65px 55px 65px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .createArtist {
+        border-radius: 16px;
+        padding: 23px 60px 50px 60px;
+    }
+    .createArtistForm {
+        padding: 0px 45px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .createArtist {
+        border-radius: 13px;
+        padding: 20px 45px 43px 45px;
+    }
+    .createArtistForm {
+        padding: 0px 37px;
+    }
+}

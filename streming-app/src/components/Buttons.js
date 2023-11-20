@@ -1,14 +1,20 @@
 import Button from "./Button"
 import '../style/Buttons.css'
 
-function Buttons(page)
-{
-    switch(page)
-    {
+function Buttons(page) {
+    switch (page) {
         case 'Artists':
-            return(
+            return (
                 <div className="buttons">
-                    {Button('New artist')}
+                    <a href='/CreateArtist'>
+                        {Button('New artist', 'newArtistButton')}
+                    </a>
+                </div>
+            )
+        case 'CreateArtist':
+            return (
+                <div className="buttons">
+                    {Button('Create artist', 'createArtistForm', 'submit')}
                 </div>
             )
         default:
