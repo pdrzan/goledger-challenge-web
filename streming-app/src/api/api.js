@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function useGetHeader() {
   const [data, setData] = useState(null);
@@ -11,7 +11,7 @@ function useGetHeader() {
   }, []);
 
   return (
-      data ? data : 'Loading...'
+    data ? data : false
   );
 }
 
@@ -26,7 +26,7 @@ function useGetShema() {
   }, []);
 
   return (
-    data ? data : 'Loading...'
+    data ? data : false
   );
 }
 
@@ -52,7 +52,7 @@ function useGetShemaPost(assestType) {
   }, []);
 
   return (
-    data ? data : 'Loading...'
+    data ? data : false
   );
 }
 
@@ -80,7 +80,31 @@ function useCreateAsset(asset) {
   }, []);
 
   return (
-    data ? data : 'Loading...'
+    data ? data : false
+  );
+}
+
+function createAsset(asset) {
+  let data;
+  fetch('http://ec2-54-87-223-191.compute-1.amazonaws.com/api/invoke/createAsset', {
+    method: "POST",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(
+      {
+        "asset": [
+          asset
+        ]
+      }
+    )
+  })
+    .then(response => response.json())
+    .then(json => data = json)
+    .catch(error => console.error(error));
+  return (
+    data
   );
 }
 
@@ -108,7 +132,7 @@ function useReadAsset(key) {
   }, []);
 
   return (
-    data ? data : 'Loading...'
+    data ? data : false
   );
 }
 
@@ -126,6 +150,35 @@ function useSearch(assetType) {
           "query": {
             "selector": {
               "@assetType": assetType
+            }
+          }
+        }
+      )
+    })
+      .then(response => response.json())
+      .then(json => setData(json))
+      .catch(error => console.error(error));
+  }, []);
+
+  return (
+    data ? data : false
+  );
+}
+
+function useSearchKey(assetKey) {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch('http://ec2-54-87-223-191.compute-1.amazonaws.com/api/query/search', {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(
+        {
+          "query": {
+            "selector": {
+              "@key": assetKey
             }
           }
         }
@@ -163,38 +216,36 @@ function useUpdateAsset(asset) {
   }, []);
 
   return (
-    data ? data : 'Loading...'
+    data ? data : false
   );
 }
 
-function useDeleteAsset(key) {
-  const [data, setData] = useState(null);
+function deleteAsset(key) {
+  let data;
 
-  useEffect(() => {
-    fetch('http://ec2-54-87-223-191.compute-1.amazonaws.com/api/invoke/deleteAsset', {
-      method: "DELETE",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(
-        {
-          "key": {
-            "@key": key
-          }
+  fetch('http://ec2-54-87-223-191.compute-1.amazonaws.com/api/invoke/deleteAsset', {
+    method: "DELETE",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(
+      {
+        "key": {
+          "@key": key
         }
-      )
-    })
-      .then(response => response.json())
-      .then(json => setData(json))
-      .catch(error => console.error(error));
-  }, []);
+      }
+    )
+  })
+    .then(response => response.json())
+    .then(json => data = json)
+    .catch(error => console.error(error));
 
   return (
-    data ? data : 'Loading...'
+    data ? data : false
   );
 }
 
 
 
-export { useGetHeader, useGetShema, useGetShemaPost, useCreateAsset, useReadAsset, useSearch, useUpdateAsset, useDeleteAsset };
+export { useGetHeader, useGetShema, useGetShemaPost, useCreateAsset, useReadAsset, useSearch, useUpdateAsset, deleteAsset, createAsset, useSearchKey };
